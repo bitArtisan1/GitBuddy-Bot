@@ -1,6 +1,6 @@
 # GitHub Bot
 
-GitHub Bot is an automation tool designed to interact with GitHub's API. It allows you to automatically star repositories and follow users based on specific criteria. This tool ensures compliance with GitHub's Terms of Service by pacing its operations to avoid being flagged as spam.
+GitHub Bot is a powerful automation tool designed to interact with GitHub's API. It allows you to automatically star repositories and follow users based on specific criteria, ensuring compliance with GitHub's Terms of Service. With features like rate limit awareness, undo operations, and graceful shutdown, GitHub Bot is your ideal companion for managing GitHub activity efficiently and safely.
 
 ## Features
 
@@ -27,10 +27,40 @@ GitHub Bot is an automation tool designed to interact with GitHub's API. It allo
     ```
 
 2. **Set Up Environment**:
-    Ensure you have Java 11 or higher installed. Set the `GITHUB_TOKEN` environment variable with your GitHub Personal Access Token.
-    ```sh
-    export GITHUB_TOKEN=your_github_token
-    ```
+    Ensure you have Java 11 or higher installed.
+
+### Setting Up GitHub Token
+
+1. **Obtain a Personal Access Token**:
+    - Go to [GitHub's Personal Access Token Settings](https://github.com/settings/tokens).
+    - Click on "Generate new token (classic)".
+    - Give your token a descriptive name.
+    - Set an expiration for your token as per your preference.
+
+2. **Set Required Permissions**:
+    - Under `Select scopes`, select the following permissions:
+      - `repo` (Full control of private repositories)
+      - `public_repo` (Access public repositories)
+      - `user` (Read and write user profile data)
+    - Click "Generate token".
+
+3. **Copy the Token**:
+    - Copy the generated token. You won't be able to see it again once you navigate away from the page.
+
+4. **Set Up Environment Variable**:
+    - **Windows**:
+      - Open the Start Search, type in "env", and select "Edit the system environment variables".
+      - Click the "Environment Variables…" button.
+      - In the "System variables" section, click "New…".
+      - Set `Variable name` to `GITHUB_TOKEN` and `Variable value` to your copied token.
+      - Click OK and apply the changes.
+    - **macOS/Linux**:
+      - Open a terminal window.
+      - Run the following command to set the environment variable:
+        ```sh
+        export GITHUB_TOKEN=your_github_token
+        ```
+      - To make this change permanent, add the above line to your shell's startup file (e.g., `~/.bashrc`, `~/.zshrc`).
 
 ### Compiling in an IDE
 
@@ -99,6 +129,26 @@ GitHub Bot is an automation tool designed to interact with GitHub's API. It allo
     ```sh
     java -jar github-bot.jar
     ```
+
+## Changing the Query/Search Criteria
+
+If you want to change the query or search criteria, you need to modify the code in the `Utils.java` file. Here is how you can do it:
+
+1. **Open `Utils.java`**:
+    - Locate the `fetchAllRepositories` method in the `Utils.java` file.
+
+2. **Modify the Query**:
+    - Find the line where the query is set:
+      ```java
+      String query = URLEncoder.encode(String.format("created:>%s stars:<4", yesterday), StandardCharsets.UTF_8);
+      ```
+    - Change the query string to your desired criteria. For example, if you want to search for repositories with more than 10 stars, you can modify it as follows:
+      ```java
+      String query = URLEncoder.encode(String.format("created:>%s stars:>10", yesterday), StandardCharsets.UTF_8);
+      ```
+
+3. **Build and Run**:
+    - After modifying the query, rebuild the project and run it again using the instructions provided in the [Usage](#usage) section.
 
 ## Detailed Explanation
 
