@@ -22,7 +22,7 @@ GitHub Bot is a powerful automation tool designed to interact with GitHub's API.
 
 1. **Clone the Repository**:
     ```sh
-    git clone https://github.com/bitartisan/gitbuddy-bot.git
+    git clone https://github.com/bitartisan1/gitbuddy-bot.git
     cd gitbuddy-bot
     ```
 
