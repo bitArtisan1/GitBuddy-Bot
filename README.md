@@ -198,12 +198,17 @@ If you would like to contribute to this project, please fork the repository and 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
 
 ## Support Me
-For support or any questions, please open an issue in the repository.
-If you liked this, please consider leaving a star ⭐
+If you find RepoUp useful, consider supporting me by:
 
-If you found this to be useful, make sure to follow me for more 🙃
+- Starring the repository on GitHub
+- Sharing the tool with others
+- Providing feedback and suggestions
+- Follow me for more :)
 
 <a href="https://www.buymeacoffee.com/bitArtisan"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=bitArtisan&button_colour=CBC3E3&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff" /></a>
+    
+---
+For any issues or feature requests, please open an issue on GitHub. Happy coding!
 <center>
 <div style="text-align: center;">
   <p align="center">
