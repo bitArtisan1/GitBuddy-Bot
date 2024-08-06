@@ -18,6 +18,11 @@ GitHub Bot is a powerful automation tool designed to interact with GitHub's API.
 3. **Process Repositories**: Stars the repositories and follows the owners with a delay between each operation to avoid spam.
 4. **Undo Operations**: Provides functionality to unstar repositories and unfollow users that were starred and followed during the bot's operations.
 
+## Prerequisites
+
+- **Java 11 or higher**: Make sure you have Java Development Kit (JDK) 11 or higher installed on your machine.
+- **Gradle**: Used for building the project. If you don't have Gradle installed, the wrapper included in the repository can be used.
+
 ## Installation
 
 1. **Clone the Repository**:
