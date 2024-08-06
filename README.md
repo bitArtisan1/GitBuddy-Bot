@@ -100,7 +100,7 @@ GitHub Bot is a powerful automation tool designed to interact with GitHub's API.
 ### Using the JAR Release
 
 1. **Download the JAR**:
-    - Go to the [Releases](https://github.com/yourusername/github-bot/releases) section of the repository.
+    - Go to the [Releases](https://github.com/bitartisan1/gitbuddy-bot/releases) section of the repository.
     - Download the latest `.jar` release.
 
 2. **Run the JAR**:
