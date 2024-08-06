@@ -1,3 +1,11 @@
+<div align="right">
+    <a href="https://www.buymeacoffee.com/bitArtisan">
+        <img src="https://img.shields.io/badge/Buy_me_a_coffee-FFDD00?style=flat-square&logo=buy-me-a-coffee&logoColor=black" alt="Buy Me a Coffee Pls!" />
+    </a>
+</div>
+
+
+
 # GitHub Bot
 
 GitHub Bot is a powerful automation tool designed to interact with GitHub's API. It allows you to automatically star repositories and follow users based on specific criteria, ensuring compliance with GitHub's Terms of Service. With features like rate limit awareness, undo operations, and graceful shutdown, GitHub Bot is your ideal companion for managing GitHub activity efficiently and safely.
@@ -189,6 +197,17 @@ If you would like to contribute to this project, please fork the repository and 
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
 
-## Support
+## Support Me
+For support or any questions, please open an issue in the repository.
+If you liked this, please consider leaving a star ⭐
 
-For support or any questions, please open an issue in the repository or contact me at your.email@example.com.
+If you found this to be useful, make sure to follow me for more 🙃
+
+<a href="https://www.buymeacoffee.com/bitArtisan"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=bitArtisan&button_colour=CBC3E3&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff" /></a>
+<center>
+<div style="text-align: center;">
+  <p align="center">
+    <img src="https://github.com/user-attachments/assets/88a21822-dd10-4b3d-89d4-bad482f3a605" alt="octodance" width="100" height="100" style="margin-right: 10px;"/>
+  </p>
+</div>
+</center>
