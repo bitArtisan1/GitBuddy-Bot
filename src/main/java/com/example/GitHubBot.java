@@ -13,6 +13,8 @@ public class GitHubBot {
     private static final AtomicBoolean stopFlag = new AtomicBoolean(false);
     static final AtomicBoolean rateLimitExceeded = new AtomicBoolean(false);
     static final ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
+    private static List<JsonNode> cachedRepositories = new ArrayList<>();
+    private static int lastProcessedIndex = 0;
 
     public static void main(String[] args) {
         if (GITHUB_TOKEN == null || GITHUB_TOKEN.isEmpty()) {
@@ -55,19 +57,31 @@ public class GitHubBot {
 
     private static void scheduleTask(long delay) {
         scheduler.schedule(() -> {
-            List<JsonNode> repositories = fetchAllRepositories();
-            System.out.println("Fetched " + PURPLE + repositories.size() + RESET + " repositories.");
+            if (rateLimitExceeded.get()) {
+                // Reset rate limit flag before retrying
+                rateLimitExceeded.set(false);
+                printRateLimit();
+            }
+
+            if (cachedRepositories.isEmpty()) {
+                cachedRepositories = fetchAllRepositories();
+                System.out.println("Fetched " + PURPLE + cachedRepositories.size() + RESET + " repositories.");
+                lastProcessedIndex = 0;
+            }
 
             List<CompletableFuture<Void>> futures = new ArrayList<>();
-            for (JsonNode repo : repositories) {
-                if (stopFlag.get() || rateLimitExceeded.get()) break;
+            for (int i = lastProcessedIndex; i < cachedRepositories.size(); i++) {
+                if (stopFlag.get() || rateLimitExceeded.get()) {
+                    lastProcessedIndex = i;
+                    break;
+                }
 
+                JsonNode repo = cachedRepositories.get(i);
                 CompletableFuture<Void> future = CompletableFuture.runAsync(() -> processRepository(repo), executorService);
                 futures.add(future);
 
                 try {
-                    // Introduce delay between operations to avoid being flagged as spam
-                    Thread.sleep(5000); // 5 seconds delay
+                    Thread.sleep(0); // 5 seconds delay between operations
                 } catch (InterruptedException e) {
                     Thread.currentThread().interrupt();
                 }
@@ -81,10 +95,13 @@ public class GitHubBot {
             }
 
             if (rateLimitExceeded.get()) {
-                System.out.println(YELLOW + "Rescheduling all follow operations after 1 hour due to rate limit exceeded..." + RESET);
-                scheduleTask(3600); // Reschedule after 1 hour
-            } else {
+                System.out.println(YELLOW + "Rate limit exceeded. Retrying follow operations after 10 seconds..." + RESET);
+                scheduleTask(3600); // Reschedule after 10 seconds for testing
+            } else if (lastProcessedIndex >= cachedRepositories.size()) {
+                System.out.println(GREEN + "All repositories processed. Shutting down..." + RESET);
                 shutdownExecutorServices();
+            } else {
+                scheduleTask(5); // Reschedule immediately to continue
             }
         }, delay, TimeUnit.SECONDS);
     }
