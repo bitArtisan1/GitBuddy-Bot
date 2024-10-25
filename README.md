@@ -10,7 +10,9 @@ GitHub Bot is a powerful automation tool designed to interact with GitHub's API.
 
 <div align="center">
   <img src="https://github.com/user-attachments/assets/ad72ba38-4cd3-4d15-a702-1b3bb7d98352" alt="netDigger Logo" />
-  <p><strong><em>Fast GitHub Follower Bot.</em></strong></p>
+    
+  <p><strong><em>
+      Fast GitHub Follower Bot.</em></strong></p>
 </div>
 
 
