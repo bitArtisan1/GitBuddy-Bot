@@ -8,12 +8,10 @@
 
 GitHub Bot is a powerful automation tool designed to interact with GitHub's API. It allows you to automatically star repositories and follow users based on specific criteria, ensuring compliance with GitHub's Terms of Service. With features like rate limit awareness, undo operations, and graceful shutdown, GitHub Bot is your ideal companion for managing GitHub activity efficiently and safely.
 
-<center>
-<div>
-  <img src="https://github.com/user-attachments/assets/ad72ba38-4cd3-4d15-a702-1b3bb7d98352" alt="netDigger Logo." />
-  <p align="center"><strong><em>Fast GitHub Follower Bot.</em></strong></p>
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/ad72ba38-4cd3-4d15-a702-1b3bb7d98352" alt="netDigger Logo" />
+  <p><strong><em>Fast GitHub Follower Bot.</em></strong></p>
 </div>
-</center>
 
 
 ## Features
