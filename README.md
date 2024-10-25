@@ -1,4 +1,4 @@
-![github-mark-white](https://github.com/user-attachments/assets/f2507fe6-d753-4a9e-afc3-fc11bc40fcdf)<div align="right">
+<div align="right">
     <a href="https://www.buymeacoffee.com/bitArtisan">
         <img src="https://img.shields.io/badge/Buy_me_a_coffee-FFDD00?style=flat-square&logo=buy-me-a-coffee&logoColor=black" alt="Buy Me a Coffee Pls!" />
     </a>
@@ -6,7 +6,7 @@
 
 <center>
 <div>
-  <img src="https://github.com/user-attachments/assets/ad72ba38-4cd3-4d15-a702-1b3bb7d98352" alt="netDigger Logo." style="width: 1000px; height: 200px;" />
+  <img src="https://github.com/user-attachments/assets/ad72ba38-4cd3-4d15-a702-1b3bb7d98352" alt="netDigger Logo." />
   <p align="center"><strong><em>Fast GitHub Follower Bot.</em></strong></p>
 </div>
 </center>
